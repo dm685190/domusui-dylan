@@ -250,7 +250,7 @@ export function LockCardView({
 
   const sliderLabel =
     model.primaryAction === 'unlock'
-      ? 'Scorri per aprire'
+      ? 'Slide to open'
       : model.primaryAction === 'lock'
         ? 'Blocca'
         : model.stateLabel;

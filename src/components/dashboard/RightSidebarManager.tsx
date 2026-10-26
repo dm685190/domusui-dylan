@@ -554,12 +554,12 @@ const WEATHER_SECONDARY_INFO_META: Record<WeatherSecondaryInfo, WeatherSecondary
   precipitation: {
     value: 'precipitation',
     label: 'Pioggia',
-    description: 'Probabilita di precipitazione.',
+    description: 'Chance of precipitation.',
   },
   wind: {
     value: 'wind',
     label: 'Vento',
-    description: 'Velocita del vento.',
+    description: 'Wind speed.',
   },
   humidity: {
     value: 'humidity',
@@ -574,7 +574,7 @@ const WEATHER_SECONDARY_INFO_META: Record<WeatherSecondaryInfo, WeatherSecondary
   visibility: {
     value: 'visibility',
     label: 'Visibilita',
-    description: 'Distanza di visibilita.',
+    description: 'Visibility distance.',
   },
   uv_index: {
     value: 'uv_index',
@@ -589,7 +589,7 @@ const WEATHER_SECONDARY_INFO_META: Record<WeatherSecondaryInfo, WeatherSecondary
   dew_point: {
     value: 'dew_point',
     label: 'Dew point',
-    description: 'Punto di rugiada.',
+    description: 'Dew point.',
   },
   condition: {
     value: 'condition',
@@ -862,7 +862,7 @@ const MICRO_WIDGET_CATALOG: Array<{
   {
     type: 'micro_button',
     label: 'Button',
-    description: 'Pulsante con azione push, switch o pagina.',
+    description: 'Button with push action, switch, or page.',
   },
   {
     type: 'micro_slider',
@@ -3190,14 +3190,14 @@ export function RightSidebarManager({
                   <label className="block">
                     <p className={BUILDER_LABEL_CLASS}>{bt('Titolo')}</p>
                     <input
-                      value={selectedSection.title ?? 'Scenari'}
+                      value={selectedSection.title ?? 'Scenes'}
                       onChange={(event) =>
                         onUpdateSection(selectedSection.id, (section) => ({
                           ...section,
                           title: event.target.value,
                         }))
                       }
-                      placeholder="Scenari"
+                      placeholder="Scenes"
                       className={BUILDER_INPUT_CLASS}
                     />
                   </label>
@@ -3207,7 +3207,7 @@ export function RightSidebarManager({
                     <div className="dashboard-content-surface overflow-hidden rounded-[1.5rem] p-0">
                       <div className="h-[7rem] w-full">
                         <ScenesCard
-                          title={selectedSection.title ?? 'Scenari'}
+                          title={selectedSection.title ?? 'Scenes'}
                           scenes={scenesSelected}
                           sceneLabels={sceneLabels}
                           sceneIcons={sceneIcons}

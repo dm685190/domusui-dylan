@@ -1062,7 +1062,7 @@ export function ClimateCard({
               <Power size={isDenseCard ? 17 : 20} />
             </button>
             <p className={`mt-1.5 text-[0.68rem] ${tertiaryTextClass}`}>
-              {currentTemp !== undefined ? `Ambiente ${currentTemp.toFixed(1)}${temperatureUnit}` : 'Clima spento'}
+              {currentTemp !== undefined ? `Ambient ${currentTemp.toFixed(1)}${temperatureUnit}` : 'Climate off'}
             </p>
           </div>
         ) : null}

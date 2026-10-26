@@ -612,7 +612,7 @@ export function SectionCardRenderer({
 
   return (
     <ScenesCard
-      title={section.title ?? 'Scenari'}
+      title={section.title ?? 'Scenes'}
       scenes={section.scenes ?? SCENES_CATALOG.slice(0, 4).map((scene) => scene.id)}
       sceneLabels={section.sceneLabels}
       sceneIcons={section.sceneIcons}

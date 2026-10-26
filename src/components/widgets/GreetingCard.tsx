@@ -187,14 +187,14 @@ export function GreetingCard({
   const titleClampLines = clampTitle
     ? subtitleLines.length > 0
       ? isTinyCard
-        ? 1
+        ? 2
         : 2
       : isTinyCard
         ? 2
         : 3
     : subtitleLines.length > 0
       ? isTinyCard
-        ? 1
+        ? 2
         : 2
       : 2;
   const subtitleClampLines = isTinyCard || isCompactCard ? 1 : 2;

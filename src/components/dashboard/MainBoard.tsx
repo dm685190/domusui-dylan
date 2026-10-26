@@ -6236,7 +6236,7 @@ export function MainBoard() {
         'alert',
         dashboardSecurity.identityStatus === 'resolving'
           ? t('home.edit.identityResolving')
-          : 'Sessione di modifica chiusa: servono i permessi Owner o Admin.',
+          : 'Editing session closed: Owner or Admin permissions required.',
       );
     }
   }, [addNotification, dashboardSecurity, isEditMode]);
@@ -10157,7 +10157,7 @@ export function MainBoard() {
               scenes: ['music', 'going-out', 'night', 'movie'],
               scenesShowBackground: true,
               scenesShowBorder: true,
-              title: 'Scenari',
+              title: 'Scenes',
             }
           : {}),
         ...(kind === 'stack-vertical'

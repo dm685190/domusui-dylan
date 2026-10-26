@@ -2,6 +2,10 @@ import type { AppLocale } from "./I18nProvider";
 
 const copy = {
   en: {
+    "Motore dimensioni": "Sizing engine",
+    "Motore dimensioni card": "Card sizing engine",
+    "Switch rapido per testare il sizing adattivo anche in modalita demo.":
+      "Quick switch to test adaptive sizing even in demo mode.",
     "Meteo nella card": "Weather in the card",
     "Mostra il widget meteo dentro la card saluto.": "Show the weather widget inside the greeting card.",
     "Mostra il meteo nella card saluto": "Show weather in the greeting card",
@@ -176,6 +180,10 @@ const copy = {
     "Entita da associare": "Entity to link",
   },
   fr: {
+    "Motore dimensioni": "Moteur de dimensionnement",
+    "Motore dimensioni card": "Moteur de dimensionnement des cartes",
+    "Switch rapido per testare il sizing adattivo anche in modalita demo.":
+      "Bascule rapide pour tester le dimensionnement adaptatif même en mode démo.",
     "Meteo nella card": "Météo dans la carte",
     "Mostra il widget meteo dentro la card saluto.": "Afficher le widget météo dans la carte d’accueil.",
     "Mostra il meteo nella card saluto": "Afficher la météo dans la carte d’accueil",

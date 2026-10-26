@@ -375,7 +375,7 @@ export function ScenesCard({
   const availableScenes = SCENES_CATALOG.filter((scene) => !selectedScenes.includes(scene.id));
   const addSlots = isEditMode ? availableScenes : [];
   const iconSize = isShortCard ? 14 : isTinyCard || compact ? 15 : 16;
-  const titleLabel = title?.trim() || 'Scenari';
+  const titleLabel = title?.trim() || 'Scenes';
   const headerClass = isShortCard
     ? 'mb-1.5 flex items-center justify-between px-3 pt-2'
     : 'mb-3 flex items-center justify-between px-3 pt-3 sm:px-4 sm:pt-4';

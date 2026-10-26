@@ -70,24 +70,24 @@ export function normalizeCoverState(value: string | undefined): NormalizedCoverS
 
 export function translateCoverState(state: string) {
   if (state === 'open') {
-    return 'Aperta';
+    return 'Open';
   }
   if (state === 'closed') {
-    return 'Chiusa';
+    return 'Closed';
   }
   if (state === 'opening') {
-    return 'In apertura';
+    return 'Opening';
   }
   if (state === 'closing') {
-    return 'In chiusura';
+    return 'Closing';
   }
   if (state === 'stopped') {
-    return 'Fermata';
+    return 'Stopped';
   }
   if (state === 'unavailable') {
-    return 'Non disponibile';
+    return 'Unavailable';
   }
-  return 'Sconosciuta';
+  return 'Unknown';
 }
 
 export function resolveCoverPosition(

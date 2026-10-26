@@ -325,6 +325,7 @@ export const italianTranslations = {
 export type TranslationKey = keyof typeof italianTranslations;
 
 export const englishTranslations: Record<TranslationKey, string> = {
+
   'language.name.it': 'Italiano',
   'language.name.en': 'English',
   'language.name.fr': 'Français',

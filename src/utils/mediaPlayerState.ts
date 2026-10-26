@@ -50,16 +50,16 @@ export function normalizeMediaPlayerStateKey(value: string | undefined): MediaPl
   return 'unknown';
 }
 
-export function translateMediaPlayerState(value: string | undefined, fallback = 'Sconosciuto') {
+export function translateMediaPlayerState(value: string | undefined, fallback = 'Unknown') {
   const state = normalizeMediaPlayerStateKey(value);
-  if (state === 'playing') return 'In riproduzione';
-  if (state === 'paused') return 'In pausa';
-  if (state === 'idle') return 'Inattivo';
-  if (state === 'buffering') return 'Caricamento';
-  if (state === 'on') return 'Acceso';
-  if (state === 'off') return 'Spento';
+  if (state === 'playing') return 'Playing';
+  if (state === 'paused') return 'Paused';
+  if (state === 'idle') return 'Idle';
+  if (state === 'buffering') return 'Buffering';
+  if (state === 'on') return 'On';
+  if (state === 'off') return 'Off';
   if (state === 'standby') return 'Standby';
-  if (state === 'unavailable') return 'Non disponibile';
+  if (state === 'unavailable') return 'Unavailable';
   if (state === 'unknown') return fallback;
   return fallback;
 }
