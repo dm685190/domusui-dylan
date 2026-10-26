@@ -12,6 +12,13 @@ import { TRANSLATIONS, type TranslationKey } from './translations';
 export const SUPPORTED_LOCALES = ['it', 'en', 'fr'] as const;
 export type AppLocale = (typeof SUPPORTED_LOCALES)[number];
 
+/**
+ * Dylan's Home Assistant instance is operated in English.  Keep the embedded
+ * Domus panel deterministic rather than inheriting a stale panel/browser
+ * locale, which previously leaked Italian labels back into HA navigation.
+ */
+export const INSTANCE_LOCALE: AppLocale = 'en';
+
 export const LANGUAGE_STORAGE_KEY = 'domusui.language.v1';
 
 export type TranslationParameters = Record<string, string | number>;
@@ -84,7 +91,7 @@ export function I18nProvider({ children, forcedLocale }: { children: ReactNode; 
   const [explicitLocale, setExplicitLocale] = useState<AppLocale | null>(readStoredLocale);
   const [homeAssistantLocale, setHomeAssistantLocaleState] = useState<AppLocale | null>(null);
   const [browserLocale] = useState(detectBrowserLocale);
-  const locale = forcedLocale ?? explicitLocale ?? homeAssistantLocale ?? browserLocale;
+  const locale = forcedLocale ?? INSTANCE_LOCALE;
 
   const setLocale = useCallback((nextLocale: AppLocale) => {
     if (!SUPPORTED_LOCALES.includes(nextLocale)) return;
@@ -120,9 +127,9 @@ const fallbackI18nContext: I18nContextValue = {
   locale: 'it',
   setLocale: () => undefined,
   setHomeAssistantLocale: () => undefined,
-  t: (key, parameters) => translateForLocale('it', key, parameters),
-  formatNumber: (value, options) => new Intl.NumberFormat('it', options).format(value),
-  formatDate: (value, options) => new Intl.DateTimeFormat('it', options).format(value),
+  t: (key, parameters) => translateForLocale(INSTANCE_LOCALE, key, parameters),
+  formatNumber: (value, options) => new Intl.NumberFormat(INSTANCE_LOCALE, options).format(value),
+  formatDate: (value, options) => new Intl.DateTimeFormat(INSTANCE_LOCALE, options).format(value),
 };
 
 export function useI18n() {

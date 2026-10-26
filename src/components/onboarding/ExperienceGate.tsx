@@ -9,7 +9,7 @@ import {
 import GlassLoader from '../ui/GlassLoader';
 import LazyLoadBoundary from '../common/LazyLoadBoundary';
 import { useDeviceAppearance } from './OnboardingGlass';
-import { ArrowLeft, Languages } from 'lucide-react';
+
 import { useI18n } from '../../i18n/I18nProvider';
 
 const loadOnboardingExperience = () => import('./OnboardingExperience');
@@ -54,7 +54,7 @@ function DashboardLoading() {
 }
 
 export function ExperienceGate() {
-  const { locale, t } = useI18n();
+  const { t } = useI18n();
   const location = useLocation();
   const navigate = useNavigate();
   const [journey, setJourney] = useState<SetupJourney>(() => {
@@ -105,27 +105,6 @@ export function ExperienceGate() {
           }}
         />
       </LazyLoadBoundary>
-    );
-  }
-
-  const localizedRoutes = ['/home', '/rooms', '/settings', '/profile', '/support', '/setup', '/appgallery', '/appgalley'];
-  const normalizedPath = location.pathname.toLowerCase().replace(/\/+$/, '') || '/';
-  const routeIsLocalized = normalizedPath === '/' || localizedRoutes.some(
-    (path) => normalizedPath === path || normalizedPath.startsWith(`${path}/`),
-  );
-  if (locale !== 'it' && !routeIsLocalized) {
-    return (
-      <main className="apple-bg-main flex min-h-[100dvh] items-center justify-center px-5 py-10 text-[color:var(--ui-text-primary)]">
-        <section className="liquid-glass-panel w-full max-w-lg rounded-[2rem] border border-[color:var(--ui-border)] p-7 text-center shadow-2xl sm:p-10">
-          <span className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-[color:var(--ui-fill-secondary)] text-[color:var(--ui-accent)]"><Languages size={22} /></span>
-          <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[color:var(--ui-text-tertiary)]">{t('route.comingSoon.eyebrow')}</p>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight">{t('route.comingSoon.title')}</h1>
-          <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-[color:var(--ui-text-secondary)]">{t('route.comingSoon.description')}</p>
-          <button type="button" onClick={() => navigate('/home')} className="glass-button mx-auto mt-7 inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold">
-            <ArrowLeft size={16} /> {t('route.comingSoon.back')}
-          </button>
-        </section>
-      </main>
     );
   }
 
